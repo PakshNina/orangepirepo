@@ -5,8 +5,9 @@ GOOS := linux
 TARGET := hw
 MAIN := cmd/main.go
 
-# Цель по умолчанию (build и run)
-all: pull build run
+deploy: pull build run
+
+update: add commit push
 
 # Выполняем git pull для обновления репозитория
 pull:
@@ -23,3 +24,12 @@ run:
 # Чистка скомпилированных файлов
 clean:
 	rm -f $(TARGET)
+
+add:
+	git add .
+
+commit:
+	git commit -m "Next version"
+
+push:
+	git push
