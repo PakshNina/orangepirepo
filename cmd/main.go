@@ -1,9 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"log"
+	"orangepirepo/internal/service"
+)
 
 func main() {
-	for i := 0; i < 10; i++ {
-		fmt.Printf("Hello world %d\n", i)
+	s := service.NewServer("0.0.0.0:9999")
+	if err := s.Start(); err != nil {
+		log.Fatal(err)
 	}
 }
