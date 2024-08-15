@@ -2,11 +2,13 @@ package main
 
 import (
 	"log"
+	"orangepirepo/internal/board"
 	"orangepirepo/internal/service"
 )
 
 func main() {
-	s := service.NewServer("0.0.0.0:9999")
+	b := board.NewBoard()
+	s := service.NewServer("0.0.0.0:9999", b)
 	if err := s.Start(); err != nil {
 		log.Fatal(err)
 	}
