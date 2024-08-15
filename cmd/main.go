@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	_ "net/http/pprof"
 	"orangepirepo/internal/board"
 	"orangepirepo/internal/service"
 )
