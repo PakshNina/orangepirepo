@@ -12,8 +12,6 @@ update: add commit push
 # Выполняем git pull для обновления репозитория
 pull:
 	git pull
-go version
-
 
 # Сборка Go программы
 build:
